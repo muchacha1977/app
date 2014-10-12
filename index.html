@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Pink Shop Template</title>
@@ -8,6 +8,8 @@
 <link href="templatemo_style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="stylesheet/styles.css" />
 
+
+
 <script language="javascript" type="text/javascript">
 function clearText(field)
 {
@@ -15,10 +17,25 @@ function clearText(field)
     else if (field.value == '') field.value = field.defaultValue;
 }
 </script>
+
+<script src="bower_components/jquery/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers.js"></script>
+<script src="scripts/filters.js"></script>
+<script src="scripts/services.js"></script>
+
 <script language="javascript" type="text/javascript" src="scripts/mootools-1.2.1-core.js"></script>
 <script language="javascript" type="text/javascript" src="scripts/mootools-1.2-more.js"></script>
 <script language="javascript" type="text/javascript" src="scripts/slideitmoo-1.1.js"></script>
 <script language="javascript" type="text/javascript">
+
+
+
 	window.addEvents({
 		'domready': function(){
 			/* thumbnails example , div containers */
@@ -37,7 +54,7 @@ function clearText(field)
 	});
 </script>
 </head>
-<body>
+<body  ng-controller="AppListCtrl">
 <div id="templatemo_wrapper">
 	<div id="templatemo_menu">
         <ul>
@@ -89,18 +106,15 @@ function clearText(field)
 			<div class="cleaner"></div>
             
 		</div>
-        
+
         <div class="sidebar_section">
         
         	<h2>Categories</h2>
 
             <select  ng-model="orderProp" class="categories_list">
-                <option value="name">Accessories</option>
-                <option value="age">Bath & Shown </option>
-                <option value="age">Body & Face </option>
-                <option value="age">Eye Lashes </option>
-                <option value="age">Eye Shadow </option>
-
+                <option value="name">Alphabetical</option>
+                <option value="age">Newest</option>
+                <option value="priceSelect">Price</option>
             </select>
 
         </div>
@@ -176,8 +190,18 @@ function clearText(field)
                 Worlds of Beauty's Product is the amall independent online fashion and beauty retailer and offers branded and own label products across womenswear
                 and menswear. </p>
       </div>
-        
         <div class="content_section">
+            <h2>Our Products</h2>
+        <ul>
+            <li ng-repeat="item in items | filter:query | orderBy:orderProp " class="product_box margin_r35">
+                {{item.name}}
+                <p>{{item.shortDescription}}</p>
+                <p class="price">{{item.price}}</p>
+                <a href="#">Detail</a> | <a href="#">Buy Now</a>
+            </li>
+        </ul>
+        </div>
+        <!--div class="content_section">
         
         	<h2>Our Products</h2>
                     
