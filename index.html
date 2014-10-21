@@ -1,287 +1,300 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Pink Shop Template</title>
-<meta name="keywords" content="pink shop, store template, ecommerce, online shopping, CSS, HTML" />
-<meta name="description" content="Pink Shop is a free ecommerce template provided by templatemo.com" />
-<link href="templatemo_style.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" type="text/css" href="stylesheet/styles.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Pink Shop Template</title>
+    <meta name="keywords" content="pink shop, store template, ecommerce, online shopping, CSS, HTML" />
+    <meta name="description" content="Pink Shop is a free ecommerce template provided by templatemo.com" />
+    <link href="templatemo_style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="stylesheet/styles.css" />
 
 
 
-<script language="javascript" type="text/javascript">
-function clearText(field)
-{
-    if (field.defaultValue == field.value) field.value = '';
-    else if (field.value == '') field.value = field.defaultValue;
-}
-</script>
+    <script language="javascript" type="text/javascript">
+        function clearText(field)
+        {
+            if (field.defaultValue == field.value) field.value = '';
+            else if (field.value == '') field.value = field.defaultValue;
+        }
+    </script>
 
-<script src="bower_components/jquery/jquery.js"></script>
-<script src="bower_components/angular/angular.js"></script>
-<script src="bower_components/angular-animate/angular-animate.js"></script>
-<script src="bower_components/angular-route/angular-route.js"></script>
-<script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
 
-<script src="scripts/app.js"></script>
-<script src="scripts/controllers.js"></script>
-<script src="scripts/filters.js"></script>
-<script src="scripts/services.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers.js"></script>
+    <script src="scripts/filters.js"></script>
+    <script src="scripts/services.js"></script>
 
-<script language="javascript" type="text/javascript" src="scripts/mootools-1.2.1-core.js"></script>
-<script language="javascript" type="text/javascript" src="scripts/mootools-1.2-more.js"></script>
-<script language="javascript" type="text/javascript" src="scripts/slideitmoo-1.1.js"></script>
-<script language="javascript" type="text/javascript">
+    <script language="javascript" type="text/javascript" src="scripts/mootools-1.2.1-core.js"></script>
+    <script language="javascript" type="text/javascript" src="scripts/mootools-1.2-more.js"></script>
+    <script language="javascript" type="text/javascript" src="scripts/slideitmoo-1.1.js"></script>
+    <script language="javascript" type="text/javascript">
 
 
 
-	window.addEvents({
-		'domready': function(){
-			/* thumbnails example , div containers */
-			new SlideItMoo({
-						overallContainer: 'SlideItMoo_outer',
-						elementScrolled: 'SlideItMoo_inner',
-						thumbsContainer: 'SlideItMoo_items',		
-						itemsVisible: 5,
-						elemsSlide: 3,
-						duration: 200,
-						itemsSelector: '.SlideItMoo_element',
-						itemWidth: 140,
-						showControls:1});
-		}
-		
-	});
-</script>
+        window.addEvents({
+            'domready': function(){
+                /* thumbnails example , div containers */
+                new SlideItMoo({
+                    overallContainer: 'SlideItMoo_outer',
+                    elementScrolled: 'SlideItMoo_inner',
+                    thumbsContainer: 'SlideItMoo_items',
+                    itemsVisible: 5,
+                    elemsSlide: 3,
+                    duration: 200,
+                    itemsSelector: '.SlideItMoo_element',
+                    itemWidth: 140,
+                    showControls:1});
+            }
+
+        });
+    </script>
 </head>
-<body ng-controller="AppListCtrl">
+<body  ng-controller="MainCtrl">
 <div id="templatemo_wrapper">
-	<div id="templatemo_menu">
-        <ul>
-            <li><a href="#" class="current"><span>.01</span>Home</a></li>
-            <li><a href="#" target="_parent"><span>.02</span>Make-Up</a></li>
-            <li><a href="#" target="_parent"><span>.03</span>Hair</a></li>
-            <li><a href="#" target="_parent"><span>.04</span>Tanning</a></li>
-            <li><a href="#"><span>.05</span>Nail</a></li>
-            <li><a href="#"><span>.06</span>Body</a></li>
-        </ul>    	
-    </div> <!-- end of templatemo_menu -->
-    
-    <div id="templatemo_header_bar">
-    
-            <div id="header"><div class="right"></div>
-            
-                <h1><a href="http://www.templatemo.com" target="_parent">
-                    <img src="images/templatemo_logo.png" alt="Ping Shop" />
-                    <span>World of Beauty's Product</span>
-                </a></h1>
-      </div>
-            
-            <div id="search_box">
-                <form action="#" method="get">
-                    <input type="text" value="Enter keyword here..." name="q" size="10" id="searchfield" title="searchfield" ng-model="query" onfocus="clearText(this)" onblur="clearText(this)" />
-                    <input type="submit" name="Search" value="" alt="Search" id="searchbutton" title="Search" />
-                </form>
-            </div>
-    
-    </div> <!-- end of templatemo_header_bar -->
-    
-    <div class="cleaner"></div>
-    
-    <div id="sidebar"><div class="sidebar_top"></div><div class="sidebar_bottom"></div>
-    	
-        <div class="sidebar_section">
-        
-            <h2>Members</h2>
-            
-            <form action="#" method="get">
-                <label>Username</label>
-                <input type="text" value="" name="username" size="10" class="input_field" title="username" />
-                <label>Password</label>
-                <input type="password" value="" name="password" class="input_field" title="password" />
-                <a href="#">Register</a> 
-              <input type="submit" name="login" value="Login" alt="Login" id="submit_btn" title="Login" />
-            </form>
-            
-			<div class="cleaner"></div>
-            
-		</div>
+<div id="templatemo_menu">
+    <ul>
+        <li><a href="#" class="current"><span>.01</span>Home</a></li>
+        <li><a href="#" target="_parent"><span>.02</span>Make-Up</a></li>
+        <li><a href="#" target="_parent"><span>.03</span>Hair</a></li>
+        <li><a href="#" target="_parent"><span>.04</span>Tanning</a></li>
+        <li><a href="#"><span>.05</span>Nail</a></li>
+        <li><a href="#"><span>.06</span>Body</a></li>
+    </ul>
+</div> <!-- end of templatemo_menu -->
 
-        <div class="sidebar_section">
-        
-        	<h2>Categories</h2>
+<div id="templatemo_header_bar">
 
-            <select  ng-model="orderProp" class="categories_list">
-                <option value="name">Alphabetical</option>
-                <option value="age">Newest</option>
+    <div id="header"><div class="right"></div>
 
-            </select>
+        <h1><a href="http://www.templatemo.com" target="_parent">
+            <img src="images/templatemo_logo.png" alt="Ping Shop" />
+            <span>World of Beauty's Product</span>
+        </a></h1>
+    </div>
 
-        </div>
-        
-        <div class="sidebar_section">
+    <div id="search_box">
+        <form action="#" method="get">
+            <input type="text" value="Enter keyword here..." name="q" size="10" id="searchfield" title="searchfield" ng-model="query" onfocus="clearText(this)" onblur="clearText(this)" />
+            <input type="submit" name="Search" value="" alt="Search" id="searchbutton" title="Search" />
+        </form>
+    </div>
 
-            <div class="image_wrapper"><img src="images/image_01.jpg" alt="product" /></a></div>
-          <div class="discount"> <a href="#">Read more</a></div>
-        
-        </div>  
-        
-    </div> <!-- end of sidebar -->
-    
-    <div id="templatmeo_content">
-    
-    	<div id="latest_product_gallery">
-        
-        	<h2>Featured Products</h2>
-    
-	    	<div id="SlideItMoo_outer">	
-                <div id="SlideItMoo_inner">			
-                    <div id="SlideItMoo_items">
-                        <div class="SlideItMoo_element">
-                                <a href="#">
-                                <img src="images/templatemo_product_01.png" alt="product 1" /></a>
-                           
-                        </div>	
-                        <div class="SlideItMoo_element">
-                                <a href="#">
-                                <img src="images/templatemo_product_02.png" alt="product 2" /></a>
-        
-                        </div>
-                        <div class="SlideItMoo_element">
-                                <a href="#">
-                                <img src="images/templatemo_product_03.png" alt="product 3" /></a>
-        
-                        </div>
-                        <div class="SlideItMoo_element">
-                                <a href="#">
-                                <img src="images/templatemo_product_04.png" alt="product 4" /></a>
-        
-                        </div>
-                        <div class="SlideItMoo_element">
-                                <a href="#">
-                                <img src="images/templatemo_product_05.png" alt="product 5" /></a>
-        
-                        </div>
-                        <div class="SlideItMoo_element">
-                                <a href="#">
-                                <img src="images/templatemo_product_06.png" alt="product 6" /></a>
-        
-                        </div>
-                        <div class="SlideItMoo_element">
-                                <a href="#">
-                                <img src="images/templatemo_product_07.png" alt="product 7" /></a>
-                        </div>
-                        <div class="SlideItMoo_element">
-                                <a href="#">
-                                <img src="images/templatemo_product_08.png" alt="product 8" /></a>
-                        </div>
-                    </div>			
+</div> <!-- end of templatemo_header_bar -->
+
+<div class="cleaner"></div>
+
+<div id="sidebar"><div class="sidebar_top"></div><div class="sidebar_bottom"></div>
+
+    <div class="sidebar_section">
+
+        <h2>Members</h2>
+
+        <form action="#" method="get">
+            <label>Username</label>
+            <input type="text" value="" name="username" size="10" class="input_field" title="username" />
+            <label>Password</label>
+            <input type="password" value="" name="password" class="input_field" title="password" />
+            <a href="#">Register</a>
+            <input type="submit" name="login" value="Login" alt="Login" id="submit_btn" title="Login" />
+        </form>
+
+        <div class="cleaner"></div>
+
+    </div>
+
+    <div class="sidebar_section">
+
+        <h2>Categories</h2>
+
+        <select  ng-model="orderProp" class="categories_list">
+            <option value="name">Alphabetical</option>
+            <option value="age">Newest</option>
+
+        </select>
+
+    </div>
+
+    <div class="sidebar_section">
+
+        <div class="image_wrapper"><img src="images/image_01.jpg" alt="product" /></a></div>
+        <div class="discount"> <a href="#">Read more</a></div>
+
+    </div>
+
+</div> <!-- end of sidebar -->
+
+<div id="templatmeo_content">
+
+    <div id="latest_product_gallery">
+
+        <h2>Featured Products</h2>
+
+        <div id="SlideItMoo_outer">
+            <div id="SlideItMoo_inner">
+                <div id="SlideItMoo_items">
+                    <div class="SlideItMoo_element">
+                        <a href="#">
+                            <img src="images/templatemo_product_01.png" alt="product 1" /></a>
+
+                    </div>
+                    <div class="SlideItMoo_element">
+                        <a href="#">
+                            <img src="images/templatemo_product_02.png" alt="product 2" /></a>
+
+                    </div>
+                    <div class="SlideItMoo_element">
+                        <a href="#">
+                            <img src="images/templatemo_product_03.png" alt="product 3" /></a>
+
+                    </div>
+                    <div class="SlideItMoo_element">
+                        <a href="#">
+                            <img src="images/templatemo_product_04.png" alt="product 4" /></a>
+
+                    </div>
+                    <div class="SlideItMoo_element">
+                        <a href="#">
+                            <img src="images/templatemo_product_05.png" alt="product 5" /></a>
+
+                    </div>
+                    <div class="SlideItMoo_element">
+                        <a href="#">
+                            <img src="images/templatemo_product_06.png" alt="product 6" /></a>
+
+                    </div>
+                    <div class="SlideItMoo_element">
+                        <a href="#">
+                            <img src="images/templatemo_product_07.png" alt="product 7" /></a>
+                    </div>
+                    <div class="SlideItMoo_element">
+                        <a href="#">
+                            <img src="images/templatemo_product_08.png" alt="product 8" /></a>
+                    </div>
                 </div>
             </div>
-            
-    	</div> <!-- end of latest_content_gallery -->
-        
-        <div class="content_section">
-        
-        	<h2>Welcome to Worlds of Beauty's Product</h2>
-            
-            <p>ABOUT Worlds of Beauty's Product
+        </div>
 
-                Worlds of Beauty's Product is the amall independent online fashion and beauty retailer and offers branded and own label products across womenswear
-                and menswear. </p>
-      </div>
-        <div class="content_section">
-            <h2>Our Products</h2>
+    </div> <!-- end of latest_content_gallery -->
+
+    <div class="content_section">
+
+        <h2>Welcome to Worlds of Beauty's Product</h2>
+
+        <p>ABOUT Worlds of Beauty's Product
+
+            Worlds of Beauty's Product is the amall independent online fashion and beauty retailer and offers branded and own label products across womenswear
+            and menswear. </p>
+    </div>
+    <div class="content_section">
+        <h2>Our Products</h2>
+        {{test}}
         <ul>
-            <li ng-repeat="item in items | filter:query | orderBy:orderProp " class="product_box margin_r35">
-                {{item.name}}
-                <p>{{item.shortDescription}}</p>
+            <li ng-repeat="post in posts | filter:query | orderBy:orderProp " class="product_box margin_r35">
+
+                <a ng-show="post.link" href="{{post.link}}">{{post.title}} </a>
+                                                 <span ng-hide="post.link">
+                                                           {{post.title}}
+                                                 </span>
+
                 <p class="price">{{item.price}}</p>
                 <a href="#">Detail</a> | <a href="#">Buy Now</a>
             </li>
         </ul>
-        </div>
-        <!--div class="content_section">
-        
-        	<h2>Our Products</h2>
-                    
-                    <div class="product_box margin_r35">
-                    
-	                    <h3>Phasellus eget lorem</h3>
-    
-                      <div class="image_wrapper"> <a href="http://www.templatemo.com/page/1" target="_parent"><img src="images/image_02.jpg" alt="product 2" /></a> </div>
-                        
-                      <p class="price">Price: $350</p>
-                        <a href="#">Detail</a> | <a href="#">Buy Now</a>
-    
-                    </div>
-                    
-                    <div class="product_box margin_r35">
-                        <h3>Nunc condimentum</h3>
-    
-                      <div class="image_wrapper"> <a href="http://www.templatemo.com/page/2" target="_parent"><img src="images/image_03.jpg" alt="product 3" /></a> </div>
-                                                
-                      <p class="price">Price: $550</p>
-                        <a href="#">Detail</a> | <a href="#">Buy Now</a>
-                    </div>
-                    
-                    <div class="product_box">
-                        <h3>Sed sit amet sem</h3>
-    
-                      <div class="image_wrapper"> <a href="http://www.templatemo.com/page/3" target="_parent"><img src="images/image_04.jpg" alt="product 4" /></a> </div>
-                        
-                      <p class="price">Price: $250</p>
-                        <a href="#">Detail</a> | <a href="#">Buy Now</a>
-                    </div>
-                    
-                    <div class="cleaner"></div>
-                    
-                    <div class="product_box margin_r35">
-                        <h3>Etiam vitae consequat</h3>
-    
-                      <div class="image_wrapper"> <a href="http://www.templatemo.com/page/4" target="_parent"><img src="images/image_05.jpg" alt="product 5" /></a> </div>
-                        
-                      <p class="price">Price: $850</p>
-                        <a href="#">Detail</a> | <a href="#">Buy Now</a>
-                    </div>
-                    
-                    <div class="product_box margin_r35">
-                        <h3> Vivamus at justo</h3>
-    
-                      <div class="image_wrapper"> <a href="http://www.templatemo.com/page/5" target="_parent"><img src="images/image_06.jpg" alt="product 6" /></a> </div>
-                        
-                      <p class="price">Price: $450</p>
-                        <a href="#">Detail</a> | <a href="#">Buy Now</a>
-                    </div>
-                    
-                    <div class="product_box">
-                        <h3> Vivamus at justo</h3>
-    
-                      <div class="image_wrapper"> <a href="http://www.templatemo.com/page/6" target="_parent"><img src="images/image_07.jpg" alt="product 7" /></a> </div>
-                        
-                      <p class="price">Price: $350</p>
-                        <a href="#">Detail</a> | <a href="#">Buy Now</a>
-                    </div>
-                    
-                    <div class="cleaner"></div>
-                    
-                    <div class="button_01"><a href="#">View All</a></div>
-        
-        </div>
-    
-    </div> <!-- end of templatmeo_content -->
-    
-    
+        <form ng-submit="addPost()">
+            <input type="text" placeholder="Title" ng-model="title"></input>
+            <br/>
+            <input type="text" placeholder="Link"  ng-model="link"></input>
+            <br/>
+            <button type="submit">Post</button>
+        </form>
+    </div>
+    <!--div class="content_section">
+
+        <h2>Our Products</h2>
+
+                <div class="product_box margin_r35">
+
+                            <h3>Phasellus eget lorem</h3>
+
+                  <div class="image_wrapper"> <a href="http://www.templatemo.com/page/1" target="_parent"><img src="images/image_02.jpg" alt="product 2" /></a> </div>
+
+                  <p class="price">Price: $350</p>
+                    <a href="#">Detail</a> | <a href="#">Buy Now</a>
+
+                </div>
+
+                <div class="product_box margin_r35">
+                    <h3>Nunc condimentum</h3>
+
+                  <div class="image_wrapper"> <a href="http://www.templatemo.com/page/2" target="_parent"><img src="images/image_03.jpg" alt="product 3" /></a> </div>
+
+                  <p class="price">Price: $550</p>
+                    <a href="#">Detail</a> | <a href="#">Buy Now</a>
+                </div>
+
+                <div class="product_box">
+                    <h3>Sed sit amet sem</h3>
+
+                  <div class="image_wrapper"> <a href="http://www.templatemo.com/page/3" target="_parent"><img src="images/image_04.jpg" alt="product 4" /></a> </div>
+
+                  <p class="price">Price: $250</p>
+                    <a href="#">Detail</a> | <a href="#">Buy Now</a>
+                </div>
+
+                <div class="cleaner"></div>
+
+                <div class="product_box margin_r35">
+                    <h3>Etiam vitae consequat</h3>
+
+                  <div class="image_wrapper"> <a href="http://www.templatemo.com/page/4" target="_parent"><img src="images/image_05.jpg" alt="product 5" /></a> </div>
+
+                  <p class="price">Price: $850</p>
+                    <a href="#">Detail</a> | <a href="#">Buy Now</a>
+                </div>
+
+                <div class="product_box margin_r35">
+                    <h3> Vivamus at justo</h3>
+
+                  <div class="image_wrapper"> <a href="http://www.templatemo.com/page/5" target="_parent"><img src="images/image_06.jpg" alt="product 6" /></a> </div>
+
+                  <p class="price">Price: $450</p>
+                    <a href="#">Detail</a> | <a href="#">Buy Now</a>
+                </div>
+
+                <div class="product_box">
+                    <h3> Vivamus at justo</h3>
+
+                  <div class="image_wrapper"> <a href="http://www.templatemo.com/page/6" target="_parent"><img src="images/image_07.jpg" alt="product 7" /></a> </div>
+
+                  <p class="price">Price: $350</p>
+                    <a href="#">Detail</a> | <a href="#">Buy Now</a>
+                </div>
+
+                <div class="cleaner"></div>
+
+                <div class="button_01"><a href="#">View All</a></div>
+
+    </div>
+
+</div> <!-- end of templatmeo_content -->
+
+
 </div> <!-- end of templatemo_wrapper -->
 
 <div id="templatemo_footer_wrapper">
 
-	<div id="templatemo_footer">
+    <div id="templatemo_footer">
 
 
         Copyright © 2014 <a href="#">Beauty World Product</a> |
-        <a href="http://www.iwebsitetemplate.com" target="_parent">Website Templates</a> by <a href="http://www.templatemo.com" target="_parent">Free CSS Template</a></div> 
-	<!-- end of footer -->
+        <a href="http://www.iwebsitetemplate.com" target="_parent">Website Templates</a> by <a href="http://www.templatemo.com" target="_parent">Free CSS Template</a></div>
+    <!-- end of footer -->
 
 </div> <!-- end of footer_wrapper -->
 

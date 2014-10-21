@@ -2,8 +2,7 @@
 
 /* Controllers */
 
-
-myApp.controller('AppListCtrl', function ($scope) {
+/*myApp.controller('AppListCtrl', function ($scope) {
     $scope.items = [
         {'name': 'Lulu Guinness Cutout Lips ',
             'id':'1',
@@ -55,4 +54,4 @@ myApp.controller('AppListCtrl', function ($scope) {
             'price':"€9.43"}
     ];
     $scope.orderProp = 'age';
-        });
+        });*/
