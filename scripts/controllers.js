@@ -2,7 +2,6 @@
 
 /* Controllers */
 
-var myApp = angular.module('myApp', []);
 
 myApp.controller('AppListCtrl', function ($scope) {
     $scope.items = [
@@ -56,4 +55,4 @@ myApp.controller('AppListCtrl', function ($scope) {
             'price':"€9.43"}
     ];
     $scope.orderProp = 'age';
-});
+        });
